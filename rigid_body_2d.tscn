@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://8w6jv0xrpccj"]
+
+[ext_resource type="Script" path="res://RigidBody2D.gd" id="1_0jrb2"]
+[ext_resource type="Texture2D" uid="uid://7q5g1a8vyrt8" path="res://Sprites/coca.jpeg" id="2_h63wb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o220c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_h63wb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ytlb"]
+size = Vector2(117, 70)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+script = ExtResource("1_0jrb2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(7.62939e-06, -1)
+scale = Vector2(0.595477, 0.283465)
+sprite_frames = SubResource("SpriteFrames_o220c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visibility_layer = 0
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_6ytlb")
