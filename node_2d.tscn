@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bui4vbluo2xsl"]
 
-[ext_resource type="Script" path="res://node_2d.gd" id="1_nmfwc"]
+[ext_resource type="Script" path="res://Scripts/node_2d.gd" id="1_r73h3"]
 [ext_resource type="Texture2D" uid="uid://7q5g1a8vyrt8" path="res://Sprites/coca.jpeg" id="2_28ftf"]
 [ext_resource type="Texture2D" uid="uid://b77rcp6lisf5l" path="res://Sprites/fernet.jpeg" id="3_a1v1b"]
 
@@ -27,7 +27,7 @@ animations = [{
 size = Vector2(83, 50)
 
 [node name="Jugador" type="Area2D"]
-script = ExtResource("1_nmfwc")
+script = ExtResource("1_r73h3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-3.00002, -1)
