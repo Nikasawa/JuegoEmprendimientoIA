@@ -21,12 +21,11 @@ collision_mask = 0
 gravity_scale = 0.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(405, 149)
 scale = Vector2(0.595477, 0.283465)
 sprite_frames = SubResource("SpriteFrames_o220c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 visibility_layer = 0
-position = Vector2(404, 150)
+position = Vector2(1, 2)
 shape = SubResource("RectangleShape2D_6ytlb")

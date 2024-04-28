@@ -16,7 +16,6 @@ mob_scene = ExtResource("2_6sppy")
 
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 0.5
-one_shot = true
 autostart = true
 
 [node name="StartTimer" type="Timer" parent="."]
@@ -31,7 +30,7 @@ position = Vector2(536, 320)
 gizmo_extents = 0.0
 
 [node name="Jugador" parent="." instance=ExtResource("3_wphfj")]
-position = Vector2(536, 320)
+position = Vector2(504, 300)
 
 [node name="Camera2D" type="Camera2D" parent="Jugador"]
 position = Vector2(-3.99994, 0)
@@ -45,12 +44,6 @@ curve = SubResource("Curve2D_qttk7")
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
 position = Vector2(360, 472)
 rotation = -1.5708
-
-[node name="Line2D" type="Line2D" parent="."]
-position = Vector2(400, 400)
-scale = Vector2(0.903143, -1.46111)
-points = PackedVector2Array(50, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-default_color = Color(0.678431, 0.0117647, 0.0117647, 1)
 
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
