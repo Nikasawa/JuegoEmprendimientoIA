@@ -39,7 +39,6 @@ animation = &"Quieto"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(-3.5, -1)
 shape = SubResource("RectangleShape2D_shhv7")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

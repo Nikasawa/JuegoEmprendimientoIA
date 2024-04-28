@@ -7,6 +7,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_h63wb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_h63wb")
 }],
 "loop": true,
 "name": &"default",
@@ -21,7 +24,7 @@ collision_mask = 0
 gravity_scale = 0.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.595477, 0.283465)
+scale = Vector2(0.589196, 0.405512)
 sprite_frames = SubResource("SpriteFrames_o220c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
