@@ -32,7 +32,6 @@ script = ExtResource("1_dmg58")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-3.00002, -1)
 scale = Vector2(0.375556, 0.22)
 sprite_frames = SubResource("SpriteFrames_2yd5q")
 animation = &"Quieto"
