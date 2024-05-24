@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://8w6jv0xrpccj"]
+[gd_scene load_steps=5 format=3 uid="uid://8w6jv0xrpccj"]
 
 [ext_resource type="Script" path="res://Scripts/Mob.gd" id="1_0218s"]
 [ext_resource type="Texture2D" uid="uid://7q5g1a8vyrt8" path="res://Sprites/coca.jpeg" id="2_h63wb"]
-[ext_resource type="PackedScene" uid="uid://bui4vbluo2xsl" path="res://Jugador/Jugador.tscn" id="2_xf7ll"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o220c"]
 animations = [{
@@ -16,20 +15,21 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ytlb"]
-size = Vector2(117, 70)
+size = Vector2(83.5, 74.5)
 
 [node name="Mob" type="RigidBody2D"]
 collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource("1_0218s")
-jugador = ExtResource("2_xf7ll")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.468174, 0.267263)
+position = Vector2(-2.38419e-07, 1)
+rotation = 1.5708
+scale = Vector2(0.394472, 0.324917)
 sprite_frames = SubResource("SpriteFrames_o220c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 visibility_layer = 0
-position = Vector2(1, 2)
+position = Vector2(-1, -0.25)
 shape = SubResource("RectangleShape2D_6ytlb")
