@@ -8,7 +8,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var move = Vector2(250, 0).rotated(rotation)
+	var move = Vector2(150, 0).rotated(rotation)
 	position += move * delta
 	
 func _on_visible_on_screen_notifier_2d_screen_exited():

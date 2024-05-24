@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://8w6jv0xrpccj"]
 
 [ext_resource type="Script" path="res://Scripts/Mob.gd" id="1_0218s"]
-[ext_resource type="Texture2D" uid="uid://7q5g1a8vyrt8" path="res://Sprites/coca.jpeg" id="2_h63wb"]
+[ext_resource type="Texture2D" uid="uid://dimwk1spfeilb" path="res://Sprites/cangrejo2.png" id="2_xbc4l"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o220c"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_h63wb")
+"texture": ExtResource("2_xbc4l")
 }],
 "loop": true,
 "name": &"default",
@@ -23,9 +23,8 @@ gravity_scale = 0.0
 script = ExtResource("1_0218s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-2.38419e-07, 1)
-rotation = 1.5708
-scale = Vector2(0.394472, 0.324917)
+rotation = -1.5708
+scale = Vector2(0.221875, 0.259375)
 sprite_frames = SubResource("SpriteFrames_o220c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
