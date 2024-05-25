@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://8w6jv0xrpccj"]
+[gd_scene load_steps=4 format=3 uid="uid://8w6jv0xrpccj"]
 
-[ext_resource type="Script" path="res://Scripts/Mob.gd" id="1_0218s"]
+[ext_resource type="Script" path="res://Scripts/Mob.cs" id="1_sfqks"]
 [ext_resource type="Texture2D" uid="uid://dimwk1spfeilb" path="res://Sprites/cangrejo2.png" id="2_xbc4l"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o220c"]
@@ -14,21 +14,16 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ytlb"]
-size = Vector2(83.5, 74.5)
-
 [node name="Mob" type="RigidBody2D"]
 collision_mask = 0
 gravity_scale = 0.0
-script = ExtResource("1_0218s")
+script = ExtResource("1_sfqks")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.561236, -2.03167e-06)
 rotation = -1.5708
-scale = Vector2(0.221875, 0.259375)
+scale = Vector2(0.221875, 0.255867)
 sprite_frames = SubResource("SpriteFrames_o220c")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-visibility_layer = 0
-position = Vector2(-1, -0.25)
-shape = SubResource("RectangleShape2D_6ytlb")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(39, 31, 36, 36, 24, 35, 18, 29, 9, 29, -10, 17, -10, -11, -7, -18, 9, -29, 19, -28, 24, -36, 34, -35, 36, -31, 29, -25, 35, -21, 31, -18, 24, -18, 18, -15, 19, 16, 23, 18, 31, 18, 34, 22, 29, 25)

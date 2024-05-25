@@ -1,24 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7vmoepnptise"]
+[gd_scene load_steps=4 format=3 uid="uid://b4p3jv05eb1hw"]
 
-[ext_resource type="Script" path="res://Main/main.gd" id="1_3m5sx"]
-[ext_resource type="PackedScene" uid="uid://8w6jv0xrpccj" path="res://Enemigos/Mob.tscn" id="2_6sppy"]
+[ext_resource type="Script" path="res://Scripts/main.cs" id="1_g2bp6"]
 [ext_resource type="PackedScene" uid="uid://bui4vbluo2xsl" path="res://Jugador/Jugador.tscn" id="3_wphfj"]
 
 [sub_resource type="Curve2D" id="Curve2D_qttk7"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 360, 472, 0, 0, 0, 0, 360, 160, 0, 0, 0, 0, 808, 160, 0, 0, 0, 0, 808, 472, 0, 0, 0, 0, 360, 472, 0, 0, 0, 0, 808, 472)
+"points": PackedVector2Array(0, 0, 0, 0, 8, 664, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 1152, 0, 0, 0, 0, 0, 1152, 656, 0, 0, 0, 0, 8, 664)
 }
-point_count = 6
+point_count = 5
 
 [node name="Main" type="Node"]
-script = ExtResource("1_3m5sx")
-mob_scene = ExtResource("2_6sppy")
+script = ExtResource("1_g2bp6")
 
 [node name="MobTimer" type="Timer" parent="."]
 
 [node name="StartTimer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+autostart = true
 
 [node name="StartPosition" type="Marker2D" parent="."]
 position = Vector2(536, 320)
@@ -36,8 +35,11 @@ limit_bottom = 15000000
 curve = SubResource("Curve2D_qttk7")
 
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
-position = Vector2(360, 472)
+position = Vector2(8, 664)
 rotation = -1.5708
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(376, 248, 376, 384, 584, 472, 760, 384, 736, 264, 592, 176, 376, 248)
 
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
