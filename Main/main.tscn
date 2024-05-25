@@ -22,11 +22,11 @@ one_shot = true
 autostart = true
 
 [node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(536, 320)
+position = Vector2(568, 322)
 gizmo_extents = 0.0
 
 [node name="Jugador" parent="." instance=ExtResource("3_wphfj")]
-position = Vector2(573, 310)
+position = Vector2(728, 317)
 
 [node name="Camera2D" type="Camera2D" parent="Jugador"]
 position = Vector2(-3.99994, 0)
