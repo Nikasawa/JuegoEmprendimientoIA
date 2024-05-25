@@ -4,12 +4,11 @@ using System.Collections.Generic;
 
 public partial class main : Node{
 	
-	[Export] 
+	[Export]
 	public PackedScene MobScene { get; set; }
 	public object jugador;
-	public List<RigidBody2D> arrayMobs = new List<RigidBody2D>();
+	public List<Node> arrayMobs = new List<Node>();
 	public int puntos;
-
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready(){
@@ -21,7 +20,7 @@ public partial class main : Node{
 		
 		Area2D jugador = GetNode<Area2D>("Jugador");
 		
-		foreach(Node2D entidad in arrayMobs){
+		foreach(RigidBody2D entidad in arrayMobs){
 			entidad.LookAt(jugador.Position);
 		}
 	}
@@ -39,30 +38,14 @@ public partial class main : Node{
 
 	public void _on_mob_timer_timeout(){
 		
-	// Obtener la instancia de la escena "MobScene"
-		Node mobSceneInstance = MobScene.Instance();
-		
-		// Verificar si la instancia es válida
-		if (mobSceneInstance != null)
-		{
-			// Intentar obtener una referencia al nodo "Mob" en la instancia de la escena
-			Mob mobNode = mobSceneInstance.GetNode<Mob>("MobNodeName");
+		Mob mob = MobScene.Instantiate<Mob>();
 			
-			// Verificar si se obtuvo la referencia correctamente
-			if (mobNode != null)
-			{
-				// Ahora puedes trabajar con el nodo "Mob" de la escena
-				// Por ejemplo, puedes agregarlo a la escena actual
-				AddChild(mobNode);
-			}
-			else
-			{
-				GD.Print("No se pudo obtener la referencia al nodo 'Mob'");
-			}
-		}
-		else
-		{
-			GD.Print("No se pudo instanciar la escena 'MobScene'");
-		}
-}
+		var mobSpawnLocation = GetNode<PathFollow2D>("MobPath/MobSpawnLocation");
+		mobSpawnLocation.ProgressRatio = GD.Randf();
+
+		mob.Position = mobSpawnLocation.Position;
+		
+		AddChild(mob);
+		arrayMobs.Add(mob);
+	}
 }

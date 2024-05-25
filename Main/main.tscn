@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4p3jv05eb1hw"]
+[gd_scene load_steps=5 format=3 uid="uid://b4p3jv05eb1hw"]
 
 [ext_resource type="Script" path="res://Scripts/main.cs" id="1_g2bp6"]
+[ext_resource type="PackedScene" uid="uid://8w6jv0xrpccj" path="res://Enemigos/MobScene.tscn" id="3_ahxh6"]
 [ext_resource type="PackedScene" uid="uid://bui4vbluo2xsl" path="res://Jugador/Jugador.tscn" id="3_wphfj"]
 
 [sub_resource type="Curve2D" id="Curve2D_qttk7"]
@@ -11,6 +12,7 @@ point_count = 5
 
 [node name="Main" type="Node"]
 script = ExtResource("1_g2bp6")
+MobScene = ExtResource("3_ahxh6")
 
 [node name="MobTimer" type="Timer" parent="."]
 
