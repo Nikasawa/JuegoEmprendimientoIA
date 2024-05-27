@@ -12,7 +12,7 @@ public partial class main : Node{
 	// Declaracion variables
 	// En el lenguaje base hay que aclarar que tipo de variable es antes de usarla (Ej: int, char, string)
 	// Aca es igual, solo que tambien es posible usar los nodos/herramientas de Godot como tipo de variable
-	public Area2D jugador;
+	public Jugador jugador;
 	public List<Node> arrayMobs = new List<Node>(); // Array donde se almacenan los mobs
 	public int puntos;
 	
@@ -34,7 +34,8 @@ public partial class main : Node{
 	// Aca se declaran todos los valores bases que debe tener todo al iniciar el juego por primera vez
 	public void newGame(){
 		
-		jugador = GetNode<Area2D>("Jugador");
+		jugador = GetNode<Jugador>("Jugador");
+		
 		puntos = 0; // Puntaje (Esto estaba en el ejemplo de la documentacion de Godot, pero podriamos cambiarlo por XP o lo que gusten)
 		
 		Timer StartTimer = GetNode<Timer>("StartTimer");
@@ -65,5 +66,9 @@ public partial class main : Node{
 		
 		AddChild(mob); // Se agrega el objeto mob a la escena
 		arrayMobs.Add(mob); // Se agrega el objeto mob a la escena donde se guardan todos los mobs
+	}
+
+	public void _on_jugador_body_entered(Mob body){
+		jugador.recibirDaño((int)body.daño);
 	}
 }

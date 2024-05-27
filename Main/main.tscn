@@ -45,3 +45,5 @@ points = PackedVector2Array(376, 248, 376, 384, 584, 472, 760, 384, 736, 264, 59
 
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
+[connection signal="Hit" from="Jugador" to="." method="_on_jugador_hit"]
+[connection signal="body_entered" from="Jugador" to="." method="_on_jugador_body_entered"]
