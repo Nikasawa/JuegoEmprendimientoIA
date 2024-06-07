@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="SeguimosViendo"
-run/main_scene="res://node_2d.tscn"
-config/features=PackedStringArray("4.1", "Forward Plus")
-config/icon="res://icon.svg"
+run/main_scene="res://Jugador/Jugador.tscn"
+config/features=PackedStringArray("4.2", "C#", "Forward Plus")
+config/icon="res://Documentacion/icon.svg"
+
+[dotnet]
+
+project/assembly_name="SeguimosViendo"
 
 [input]
 

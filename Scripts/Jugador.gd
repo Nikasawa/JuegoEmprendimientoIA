@@ -14,13 +14,13 @@ func _process(delta):
 	var velocity = Vector2.ZERO
 	
 	if Input.is_action_pressed("Derecha"):
-		velocity.x += 200
+		velocity.x += 300
 	if Input.is_action_pressed("Izquierda"):
-		velocity.x -= 200
+		velocity.x -= 300
 	if Input.is_action_pressed("Arriba"):
-		velocity.y -= 200
+		velocity.y -= 300
 	if Input.is_action_pressed("Abajo"):
-		velocity.y += 200
+		velocity.y += 300
 		
 	"""	
 	if Input.is_action_pressed("Saltar"):
