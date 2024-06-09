@@ -33,6 +33,9 @@ sprite_frames = SubResource("SpriteFrames_4cwk6")
 
 [node name="Invulnerabilidad" type="Timer" parent="."]
 
-[connection signal="Hit" from="." to="." method="_on_hit"]
+[node name="ClickTimer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="body_entered" from="." to="." method="OnBodyEntered"]
 [connection signal="timeout" from="Invulnerabilidad" to="." method="OnInvulnerabilidadTimeout"]
+[connection signal="timeout" from="ClickTimer" to="." method="_on_click_cool_down_timeout"]

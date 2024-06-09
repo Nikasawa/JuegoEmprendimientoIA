@@ -6,6 +6,10 @@ using System.Collections.Generic;
 
 public partial class main : Node{
 	
+	
+	[Export]
+	public PackedScene AtaqueBasico {get; set;}
+	
 	[Export] // Se exporta la escena del mob (MobScebe)
 	public PackedScene MobScene { get; set; } // No es necesario exportar la del jugador porque ya viene inherente a la escena Main
 	
@@ -26,8 +30,18 @@ public partial class main : Node{
 		
 		// Por cada entidad del array: arrayMobs, se aplica la logica dentro del foreach
 		// Aclaracion: Los mobs dentro del array son del nodo tipo: RigidBody2D, por eso se declara a la variable entidad del mismo tipo
-		foreach(RigidBody2D entidad in arrayMobs){
+		foreach(Mob entidad in arrayMobs){
 			entidad.LookAt(jugador.Position);
+		}
+		
+		if(jugador.vida <= 0){
+			newGame();
+			
+			foreach(Mob entidad in arrayMobs){
+				entidad.QueueFree();
+			}
+			
+			arrayMobs.Clear();
 		}
 	}
 	
@@ -45,7 +59,10 @@ public partial class main : Node{
 		
 		// Inicio del timer/contador "StartTimer"
 		StartTimer.Start();
+	
 	}
+	
+	
 	
 	// Cuando el contador StartTimer termina, se ejecuta lo que esta dentro del void
 	public void _on_start_timer_timeout(){

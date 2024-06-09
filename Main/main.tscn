@@ -26,7 +26,7 @@ position = Vector2(568, 322)
 gizmo_extents = 0.0
 
 [node name="Jugador" parent="." instance=ExtResource("3_wphfj")]
-position = Vector2(728, 317)
+position = Vector2(563, 315)
 
 [node name="Camera2D" type="Camera2D" parent="Jugador"]
 position = Vector2(-3.99994, 0)
@@ -45,5 +45,4 @@ points = PackedVector2Array(376, 248, 376, 384, 584, 472, 760, 384, 736, 264, 59
 
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
-[connection signal="Hit" from="Jugador" to="." method="_on_jugador_hit"]
 [connection signal="body_entered" from="Jugador" to="." method="_on_jugador_body_entered"]
