@@ -6,10 +6,6 @@ using System.Collections.Generic;
 
 public partial class main : Node{
 	
-	
-	[Export]
-	public PackedScene AtaqueBasico {get; set;}
-	
 	[Export] // Se exporta la escena del mob (MobScebe)
 	public PackedScene MobScene { get; set; } // No es necesario exportar la del jugador porque ya viene inherente a la escena Main
 	
@@ -73,7 +69,7 @@ public partial class main : Node{
 	// Cuando el contador MobTimer termina, se ejecuta lo que esta dentro del void
 	public void _on_mob_timer_timeout(){
 		
-		// Se instancia el objeto mob, de la escena MobScene
+		// Se instancia el objeto Mob, de la escena MobScene
 		Mob mob = MobScene.Instantiate<Mob>();
 			
 		

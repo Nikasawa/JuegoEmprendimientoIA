@@ -3,6 +3,9 @@ using System;
 
 public partial class Jugador : Area2D{
 	
+	[Export]
+	public PackedScene ataque_basico_pj {get; set;}
+	
 	[Signal]
 	public delegate void HitEventHandler();
 	
@@ -79,8 +82,16 @@ public partial class Jugador : Area2D{
 			velocity.Y -= 1;
 		}
 		
-		if(Input.IsActionJustPressed("Click") && clickCoolDown == true){
-			GD.Print(GetViewport().GetMousePosition());
+		// Clickea y dispara
+		if(Input.IsActionJustPressed("Abajo") && clickCoolDown == true){
+			
+			// Se instancia la escena del tiro
+			AtaqueBasicoPJ tiro = ataque_basico_pj.Instantiate<AtaqueBasicoPJ>();
+			tiro.Position = Position; // Inicia en la posicion del jugador
+			var PosicionMouse = GetViewport().GetMousePosition(); // Se consigue la posicion del mouse
+			tiro.LookAt(PosicionMouse); // Mira al mouse
+			
+			
 			clickCoolDown = false;
 			clickTimer.Start();
 		}

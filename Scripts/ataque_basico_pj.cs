@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class ataque_basico_pj : Area2D
+public partial class AtaqueBasicoPJ : RigidBody2D
 {
 	public int daño;
 	public float velocidad;
@@ -17,6 +17,10 @@ public partial class ataque_basico_pj : Area2D
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta){
-		posicion.ProgressRatio = velocidad * (float)delta;
+		
+		var move = new Vector2(150, 0).Rotated(Rotation);
+		
+		// Actualizar la posición del RigidBody2D
+		Position += move * (float)delta;
 	}
 }

@@ -1,19 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://c41nekc8u3hhk"]
+[gd_scene load_steps=4 format=3 uid="uid://cjgj6cy24k550"]
 
-[ext_resource type="Script" path="res://Escenas/ataque_basico_pj.cs" id="1_imkff"]
-[ext_resource type="Texture2D" uid="uid://c06sa0xfb8vtb" path="res://Documentacion/icon.svg" id="1_kbe6b"]
+[ext_resource type="Script" path="res://Scripts/ataque_basico_pj.cs" id="1_q4ld5"]
+[ext_resource type="Texture2D" uid="uid://c06sa0xfb8vtb" path="res://Documentacion/icon.svg" id="2_gr0nc"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b1oe5"]
-size = Vector2(26, 29)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y3j2b"]
+size = Vector2(16, 14)
 
-[node name="AtaqueBasicoPJ" type="Area2D"]
-script = ExtResource("1_imkff")
+[node name="AtaqueBasicoPJ" type="RigidBody2D"]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_q4ld5")
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(2.5, -0.5)
-scale = Vector2(0.210938, 0.226563)
-texture = ExtResource("1_kbe6b")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.125, 0.105469)
+texture = ExtResource("2_gr0nc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, -0.5)
-shape = SubResource("RectangleShape2D_b1oe5")
+shape = SubResource("RectangleShape2D_y3j2b")
