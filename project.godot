@@ -12,8 +12,8 @@ config_version=5
 
 config/name="SeguimosViendo"
 run/main_scene="res://Jugador/Jugador.tscn"
-config/features=PackedStringArray("4.1", "Forward Plus")
-config/icon="res://icon.svg"
+config/features=PackedStringArray("4.2", "C#", "Forward Plus")
+config/icon="res://Documentacion/icon.svg"
 
 [dotnet]
 

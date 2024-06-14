@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bui4vbluo2xsl"]
+[gd_scene load_steps=5 format=3 uid="uid://bui4vbluo2xsl"]
 
-[ext_resource type="Script" path="res://Jugador/node_2d.gd" id="1_dmg58"]
-[ext_resource type="Texture2D" uid="uid://7q5g1a8vyrt8" path="res://Sprites/coca.jpeg" id="2_wgoim"]
-[ext_resource type="Texture2D" uid="uid://b77rcp6lisf5l" path="res://Sprites/fernet.jpeg" id="3_ewuaj"]
+[ext_resource type="Script" path="res://Scripts/Jugador.cs" id="1_nsdlq"]
+[ext_resource type="Texture2D" uid="uid://blwjw0c8kj3xp" path="res://Sprites/coca muerta.png" id="3_85rok"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2yd5q"]
 animations = [{
@@ -27,8 +26,7 @@ animations = [{
 size = Vector2(83, 50)
 
 [node name="Jugador" type="Area2D"]
-position = Vector2(0, -1)
-script = ExtResource("1_dmg58")
+script = ExtResource("1_nsdlq")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
